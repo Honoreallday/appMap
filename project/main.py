@@ -16,12 +16,53 @@
 #
 import webapp2
 import jinja2
+from google.appengine.api import users
+from google.appengine.api import ndb
 
 env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'));
 
+class Applicant(webapp2.RequestHandler):
+    name = ndb.StringProperty()
+    checkbox = {"name": name, "grade": grade, "profile": profile,
+                "activities": activities, "essay": essay,
+                "supplements": supplements,"recommendations": recommendations,
+                "interviews": interviews,"fafsa": fafsa, "css": css,
+                "idoc": idoc, "scores": scores, "scholarship": scholarship,
+                "program": program, "other": other}
+
 class Login(webapp2.RequestHandler):
     def get(self):
-        template = env.get_template('project.html')
+        user = users.get_current_user()
+        if user:
+            email_address = user.nickname()
+            applicant = Applicant.get_by_id(user.user_id())
+            signout_link_html = '<a href="%s">sign out</a>' % (
+                users.create_logout_url('/'))
+            if applicant:
+                self.redirect('/track')
+            else:
+                self.redirect('/registration')
+        else:
+            self.redirect('/')
+    def post(self):
+        user = users.get_current_user()
+        if not user:
+            self.redirect('/registration')
+            return
+        applicant.put()
+        template = env.get_template('login.html')
+        self.response.write(template.render())
+
+class Registration(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template('registration.html')
+        template_vars = {"name": self.request.get('name'),
+                         "email": self.request.get('email')}
+        self.response.write(template.render(template_vars))
+
+class About(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template('about.html')
         self.response.write(template.render())
 
 class Application(webapp2.RequestHandler):
@@ -54,11 +95,6 @@ class Track(webapp2.RequestHandler):
         template = env.get_template('track.html')
         self.response.write(template.render())
 
-class About(webapp2.RequestHandler):
-    def get(self):
-        template = env.get_template('about.html')
-        self.response.write(template.render())
-
 app = webapp2.WSGIApplication([
     ('/', Login),
     ('/application', Application),
@@ -67,5 +103,6 @@ app = webapp2.WSGIApplication([
     ('/programs', Programs),
     ('/timeline', TimeLine),
     ('/track', Track),
-    ('/about', About)
+    ('/about', About),
+    ('/registration', Registration)
 ], debug=True)
