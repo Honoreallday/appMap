@@ -17,47 +17,56 @@
 import webapp2
 import jinja2
 from google.appengine.api import users
-from google.appengine.api import ndb
+from google.appengine.ext import ndb
 
 env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'));
 
-class Applicant(webapp2.RequestHandler):
-    name = ndb.StringProperty()
-    checkbox = {"name": name, "grade": grade, "profile": profile,
-                "activities": activities, "essay": essay,
-                "supplements": supplements,"recommendations": recommendations,
-                "interviews": interviews,"fafsa": fafsa, "css": css,
-                "idoc": idoc, "scores": scores, "scholarship": scholarship,
-                "program": program, "other": other}
+# class Applicant(ndb.Model):
+#     # name = ndb.StringProperty()
 
-class Login(webapp2.RequestHandler):
-    def get(self):
-        user = users.get_current_user()
-        if user:
-            email_address = user.nickname()
-            applicant = Applicant.get_by_id(user.user_id())
-            signout_link_html = '<a href="%s">sign out</a>' % (
-                users.create_logout_url('/'))
-            if applicant:
-                self.redirect('/track')
-            else:
-                self.redirect('/registration')
-        else:
-            self.redirect('/')
-    def post(self):
-        user = users.get_current_user()
-        if not user:
-            self.redirect('/registration')
-            return
-        applicant.put()
-        template = env.get_template('login.html')
-        self.response.write(template.render())
+
+# class Login(webapp2.RequestHandler):
+#     def get(self):
+#         user = users.get_current_user()
+#         if user:
+#             email_address = user.nickname()
+#             applicant = Applicant.get_by_id(user.user_id())
+#             signout_link_html = '<a href="%s">sign out</a>' % (
+#                 users.create_logout_url('/'))
+#             if applicant:
+#                 self.redirect('/track')
+#             else:
+#                 self.redirect('/registration')
+#         else:
+#             self.redirect('/')
+#
+#     def post(self):
+#         user = users.get_current_user()
+#         if not user:
+#             self.redirect('/registration')
+#             return
+#         applicant.put()
+#         self.redirect('/track')
 
 class Registration(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('registration.html')
         template_vars = {"name": self.request.get('name'),
-                         "email": self.request.get('email')}
+                         "grade": self.request.get('grade'),
+                         "profile": self.request.get('profile'),
+                         "activities": self.request.get('activities'),
+                         "essay": self.request.get('essay'),
+                         "supplements": self.request.get('supplements'),
+                         "recommendations": self.request.get('recommendations'),
+                         "interviews": self.request.get("interviews"),
+                         "fafsa": self.request.get('fafsa'),
+                         "css": self.request.get('css'),
+                         "idoc": self.request.get('idoc'),
+                         "scores": self.request.get('scores'),
+                         "scholarship": self.request.get('scholarship'),
+                         "program": self.request.get('program'),
+                         "other": self.request.get('other')
+                         }
         self.response.write(template.render(template_vars))
 
 class About(webapp2.RequestHandler):
@@ -93,10 +102,26 @@ class TimeLine(webapp2.RequestHandler):
 class Track(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('track.html')
-        self.response.write(template.render())
+        template_vars = {"name": self.request.get('name'),
+                         "grade": self.request.get('grade'),
+                         "profile": self.request.get('profile'),
+                         "activities": self.request.get('activities'),
+                         "essay": self.request.get('essay'),
+                         "supplements": self.request.get('supplements'),
+                         "recommendations": self.request.get('recommendations'),
+                         "interviews": self.request.get("interviews"),
+                         "fafsa": self.request.get('fafsa'),
+                         "css": self.request.get('css'),
+                         "idoc": self.request.get('idoc'),
+                         "scores": self.request.get('scores'),
+                         "scholarship": self.request.get('scholarship'),
+                         "program": self.request.get('program'),
+                         "other": self.request.get('other')
+                         }
+        self.response.write(template.render(template_vars))
 
 app = webapp2.WSGIApplication([
-    ('/', Login),
+    # ('/', Login),
     ('/application', Application),
     ('/finaid', FinancialAid),
     ('/testing', Testing),
