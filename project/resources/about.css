@@ -1,0 +1,88 @@
+h2 {
+  font-family: 'Amatic SC', cursive;
+  color: #2D0320;
+}
+
+h1 {
+  font-family: 'Rock Salt', cursive;
+  color: #392B58;
+  font-size: 60px;
+}
+
+#revs {
+  font-size: 30px;
+}
+
+html {
+  background-color: #2D0320;
+}
+
+body {
+  background-color: white;
+}
+/*body {
+  background-image: url("../resources/Screen Shot 2017-07-25 at 7.00.08 AM");
+}*/
+
+/* Three columns side by side */
+.column {
+    float: left;
+    width: 32%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+    padding: 0 16px;
+
+}
+
+/* Clear floats */
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.card {
+  background-color: #99D5C9;
+  color: white;
+}
+
+
+.title {
+    color: #645E9D;
+}
+.header {
+  display: inline-flex;
+}
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
