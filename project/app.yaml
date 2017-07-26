@@ -15,6 +15,9 @@ handlers:
 - url: /resources
   static_dir: resources
 
+- url: /timeline
+  static_dir: timeline
+
 - url: .*
   script: main.app
 

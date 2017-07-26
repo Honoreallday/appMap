@@ -21,38 +21,67 @@ from google.appengine.ext import ndb
 
 env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'));
 
-# class Applicant(ndb.Model):
-#     # name = ndb.StringProperty()
+class Applicant(ndb.Model):
+    name = ndb.StringProperty()
+    class_year = ndb.StringProperty()
+    profile = ndb.BooleanProperty()
+    activities = ndb.BooleanProperty()
+    essay = ndb.BooleanProperty()
+    supplements = ndb.BooleanProperty()
+    recommendations = ndb.BooleanProperty()
+    interviews = ndb.BooleanProperty()
+    fafsa = ndb.BooleanProperty()
+    css = ndb.BooleanProperty()
+    idoc = ndb.BooleanProperty()
+    scores = ndb.BooleanProperty()
+    scholarship = ndb.BooleanProperty()
+    program = ndb.BooleanProperty()
 
+class Login(webapp2.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user: #if user is logged into their Google account
+            email_address = user.nickname()
+            applicant = Applicant.get_by_id(user.user_id())
+            signout_link_html = '<a href="%s">sign out</a>' % (
+                users.create_logout_url('/'))
+            if applicant:
+                self.redirect('/track')
+            else: #if they are a new user
+                self.redirect('/registration')
+        else:
+            self.redirect('/')
 
-# class Login(webapp2.RequestHandler):
-#     def get(self):
-#         user = users.get_current_user()
-#         if user:
-#             email_address = user.nickname()
-#             applicant = Applicant.get_by_id(user.user_id())
-#             signout_link_html = '<a href="%s">sign out</a>' % (
-#                 users.create_logout_url('/'))
-#             if applicant:
-#                 self.redirect('/track')
-#             else:
-#                 self.redirect('/registration')
-#         else:
-#             self.redirect('/')
-#
-#     def post(self):
-#         user = users.get_current_user()
-#         if not user:
-#             self.redirect('/registration')
-#             return
-#         applicant.put()
-#         self.redirect('/track')
+    def post(self):
+        user = users.get_current_user()
+        if not user:
+            self.error(500)
+            return
+        applicant = Applicant(
+        name= self.request.get('name'),
+        class_year= self.request.get('class_year'),
+        profile= self.request.get('profile'),
+        activities= self.request.get('activities'),
+        essay= self.request.get('essay'),
+        supplements= self.request.get('supplements'),
+        recommendations= self.request.get('recommendations'),
+        interviews= self.request.get("interviews"),
+        fafsa= self.request.get('fafsa'),
+        css= self.request.get('css'),
+        idoc= self.request.get('idoc'),
+        scores= self.request.get('scores'),
+        scholarship= self.request.get('scholarship'),
+        program= self.request.get('program'),
+        id=user.user_id()
+        )
+        applicant.put()
+        self.redirect('/track')
 
 class Registration(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('registration.html')
         template_vars = {"name": self.request.get('name'),
-                         "grade": self.request.get('grade'),
+                         "class_year": self.request.get('class_year'),
                          "profile": self.request.get('profile'),
                          "activities": self.request.get('activities'),
                          "essay": self.request.get('essay'),
@@ -65,7 +94,6 @@ class Registration(webapp2.RequestHandler):
                          "scores": self.request.get('scores'),
                          "scholarship": self.request.get('scholarship'),
                          "program": self.request.get('program'),
-                         "other": self.request.get('other')
                          }
         self.response.write(template.render(template_vars))
 
@@ -103,7 +131,7 @@ class Track(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('track.html')
         template_vars = {"name": self.request.get('name'),
-                         "grade": self.request.get('grade'),
+                         "class_year": self.request.get('class_year'),
                          "profile": self.request.get('profile'),
                          "activities": self.request.get('activities'),
                          "essay": self.request.get('essay'),
@@ -115,13 +143,11 @@ class Track(webapp2.RequestHandler):
                          "idoc": self.request.get('idoc'),
                          "scores": self.request.get('scores'),
                          "scholarship": self.request.get('scholarship'),
-                         "program": self.request.get('program'),
-                         "other": self.request.get('other')
-                         }
+                         "program": self.request.get('program')}
         self.response.write(template.render(template_vars))
 
 app = webapp2.WSGIApplication([
-    # ('/', Login),
+    ('/', Login),
     ('/application', Application),
     ('/finaid', FinancialAid),
     ('/testing', Testing),
