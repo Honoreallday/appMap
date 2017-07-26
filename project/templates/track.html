@@ -5,14 +5,52 @@
   </head>
   <body>
     <h1>Your Map</h1>
+    <h2> {{ name }} <h2>
+    <h3> class of {{ class_year }} applicant </h3>
       <h2>Upcoming Deadlines</h2>
       <h2>Timeline</h2>
       <h2>Checklist</h2>
-        <p>
         <form>
+        <input type="checkbox" name="profile" {% if profile %} checked {% endif %} >
+        Main application profile (basic information, family, education, test scores)
+        <br>
+        <input type="checkbox" name="activities" {% if activities %} checked {% endif %} >
+        Activities and honors section
+        <br>
+        <input type="checkbox" name="essay" {% if essay %} checked {% endif %} >
+        Main application essay
+        <br>
+        <input type="checkbox" name="supplements" {% if supplements %} checked {% endif %} >
+        Supplemental essays
+        <br>
+        <input type="checkbox" name="recommendations" {% if recommendations %} checked {% endif %} >
+        Teacher/mentor/peer recommendations
+        <br>
+        <input type="checkbox" name="interviews" {% if interviews %} checked {% endif %} >
+        Interviews
+        <br>
+        <input type="checkbox" name="fafsa" {% if fafsa %} checked {% endif %} >
+        FAFSA
+        <br>
+        <input type="checkbox" name="css" {% if css %} checked {% endif %} >
+        CSS profile
+        <br>
+        <input type="checkbox" name="idoc" {% if idoc %} checked {% endif %} >
+        IDOC
+        <br>
+        <input type="checkbox" name="scores" {% if scores %} checked {% endif %} >
+        Sent score reports
+        <br>
+        <input type="checkbox" name="scholarship" {% if scholarship %} checked {% endif %} >
+        Scholarship applications
+        <br>
+        <input type="checkbox" name="program" {% if program %} checked {% endif %} >
+        Program applications (college access programs, specialty programs)
+        <br>
+        <input type="checkbox" name="other" {% if other %} checked {% endif %} >
+        Other
+        <input type="text" name="other" {% if other %} add text {% endif %} >
+        <br>
         </form>
-        </p>
-      <h2>Resources</h2>
-      
   </body>
 </html>
