@@ -5,12 +5,12 @@
   </head>
   <body>
     <h1>Sign Up</h1>
-    <form action="/track">
+    <form method="post" action="/track">
     Name
     <input type="text" name="name"/>
     <br>
-    Grade
-    <input type="text" name="grade"/>
+    Class Year (e.g. college class of 2021)
+    <input type="text" name="class_year"/>
     <br>
     Please check off any of the following that you have completed.
     <br>
@@ -49,10 +49,6 @@
     <br>
     <input type="checkbox" name="program">
     Program applications (college access programs, specialty programs)
-    <br>
-    <input type="checkbox" name="other">
-    Other
-    <input type="text" name="other">
     <br>
     <input type="submit"/>
     </form>

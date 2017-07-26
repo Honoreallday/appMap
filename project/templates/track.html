@@ -8,6 +8,20 @@
     <h2> {{ name }} <h2>
     <h3> class of {{ class_year }} applicant </h3>
       <h2>Upcoming Deadlines</h2>
+        
+        <h3>New Assignment</h3>
+        <form>
+          Assignment
+          <input type="text" name="title">
+          <br>
+          Due Date
+          <input type="text" name="due_date">
+          <br>
+          Description
+          <input type="text" name="description">
+          <br>
+          <input type="submit" value="add">
+        </form>
       <h2>Timeline</h2>
       <h2>Checklist</h2>
         <form>
@@ -46,10 +60,6 @@
         <br>
         <input type="checkbox" name="program" {% if program %} checked {% endif %} >
         Program applications (college access programs, specialty programs)
-        <br>
-        <input type="checkbox" name="other" {% if other %} checked {% endif %} >
-        Other
-        <input type="text" name="other" {% if other %} add text {% endif %} >
         <br>
         </form>
   </body>
