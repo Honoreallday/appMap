@@ -2,13 +2,15 @@
 <html>
   <head>
     <title>App Map</title>
+    <link href="/resources/track.css" rel="stylesheet"/>
+    <link href="/timeline/css/animate.css" rel="stylesheet"/>
+    <link href="/timeline/css/timelify.css" rel="stylesheet"/>
   </head>
   <body>
     <h1>Your Map</h1>
     <h2> {{ name }} <h2>
     <h3> class of {{ class_year }} applicant </h3>
       <h2>Upcoming Deadlines</h2>
-
         <h3>New Assignment</h3>
         <form>
           Assignment
@@ -22,8 +24,6 @@
           <br>
           <input type="submit" value="add">
         </form>
-      <h2>Timeline</h2>
-      
       <h2>Checklist</h2>
         <form>
         <input type="checkbox" name="profile" {% if profile %} checked {% endif %} >
@@ -62,6 +62,8 @@
         <input type="checkbox" name="program" {% if program %} checked {% endif %} >
         Program applications (college access programs, specialty programs)
         <br>
+      <h2>Timeline</h2>
+      <a href="personaltimeline.html">Timeline</a>
         </form>
   </body>
 </html>
