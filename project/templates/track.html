@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App Map</title>
+  </head>
+  <body>
+    <h1>Your Map</h1>
+    <h2> {{ name }} <h2>
+    <h3> class of {{ class_year }} applicant </h3>
+      <h2>Upcoming Deadlines</h2>
+
+        <h3>New Assignment</h3>
+        <form>
+          Assignment
+          <input type="text" name="title">
+          <br>
+          Due Date
+          <input type="text" name="due_date">
+          <br>
+          Description
+          <input type="text" name="description">
+          <br>
+          <input type="submit" value="add">
+        </form>
+      <h2>Timeline</h2>
+      
+      <h2>Checklist</h2>
+        <form>
+        <input type="checkbox" name="profile" {% if profile %} checked {% endif %} >
+        Main application profile (basic information, family, education, test scores)
+        <br>
+        <input type="checkbox" name="activities" {% if activities %} checked {% endif %} >
+        Activities and honors section
+        <br>
+        <input type="checkbox" name="essay" {% if essay %} checked {% endif %} >
+        Main application essay
+        <br>
+        <input type="checkbox" name="supplements" {% if supplements %} checked {% endif %} >
+        Supplemental essays
+        <br>
+        <input type="checkbox" name="recommendations" {% if recommendations %} checked {% endif %} >
+        Teacher/mentor/peer recommendations
+        <br>
+        <input type="checkbox" name="interviews" {% if interviews %} checked {% endif %} >
+        Interviews
+        <br>
+        <input type="checkbox" name="fafsa" {% if fafsa %} checked {% endif %} >
+        FAFSA
+        <br>
+        <input type="checkbox" name="css" {% if css %} checked {% endif %} >
+        CSS profile
+        <br>
+        <input type="checkbox" name="idoc" {% if idoc %} checked {% endif %} >
+        IDOC
+        <br>
+        <input type="checkbox" name="scores" {% if scores %} checked {% endif %} >
+        Sent score reports
+        <br>
+        <input type="checkbox" name="scholarship" {% if scholarship %} checked {% endif %} >
+        Scholarship applications
+        <br>
+        <input type="checkbox" name="program" {% if program %} checked {% endif %} >
+        Program applications (college access programs, specialty programs)
+        <br>
+        </form>
+  </body>
+</html>

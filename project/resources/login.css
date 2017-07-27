@@ -89,26 +89,26 @@
 
 
 .cb-slideshow li:nth-child(1) span {
-    background-image: url(../resources/stantaclara.jpg);
+    background-image: url(../resources/pics/stantaclara.jpg);
 }
 .cb-slideshow li:nth-child(2) span {
-    background-image: url(../resources/berk.jpg);
+    background-image: url(../resources/pics/berk.jpg);
     animation-delay: 6s;
 }
 .cb-slideshow li:nth-child(3) span {
-    background-image: url(../resources/cincity.jpg);
+    background-image: url(../resources/pics/cincity.jpg);
     animation-delay: 12s;
 }
 .cb-slideshow li:nth-child(4) span {
-    background-image: url(../resources/ucla.jpg);
+    background-image: url(../resources/pics/ucla.jpg);
     animation-delay: 18s;
 }
 .cb-slideshow li:nth-child(5) span {
-    background-image: url(../resources/wake.jpg);
+    background-image: url(../resources/pics/wake.jpg);
     animation-delay: 24s;
 }
 .cb-slideshow li:nth-child(6) span {
-    background-image: url(../resources/berry.jpg);
+    background-image: url(../resources/pics/berry.jpg);
     animation-delay: 30s;
 }
 

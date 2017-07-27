@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+
+html{
+  background-color: #2D0320;
+}
+body{
+  background-color: white;
+}
+.title {
+  text-align: center;
+  font-family: 'Rock Salt', cursive;
+}
+
+.intro  {
+  text-align: center;
+  font-family: 'Amatic SC';
+  font-size: 180%;
+}
+
+.intro-ish {
+  text-align: center;
+}
+
+#listy {
+  font-size: 75%;
+}
+
+#branch{
+  font-family: 'Rock Salt'
+}
+
+#paint{
+  background-color: #99D5C9;
+}
