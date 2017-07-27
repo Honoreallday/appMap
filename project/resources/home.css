@@ -1,22 +1,27 @@
-/* Style the links inside the sidenav */
+
+.linklogin {
+  font-size: 80px;
+}
+
+
+
 #mySidenav a {
-    position: absolute; /* Position them relative to the browser window */
-    left: -80px; /* Position them outside of the screen */
-    transition: 0.3s; /* Add transition on hover */
-    padding: 15px; /* 15px padding */
-    width: 100px; /* Set a specific width */
-    text-decoration: none; /* Remove underline */
-    font-size: 20px; /* Increase font size */
-    color: white; /* White text color */
-    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+    position: absolute;
+    left: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
     font-family: Boogaloo;
 }
 
 #mySidenav a:hover {
-    left: 0; /* On mouse-over, make the elements appear as they should */
+    left: 0;
 }
 
-/* The about link: 20px from the top with a green background */
 #application {
     top: 20px;
     background-color: #2D0320;
@@ -24,32 +29,33 @@
 
 #finaid {
     top: 80px;
-    background-color: #392B58; /* Blue */
-}
+    background-color: #392B58;
+
 
 #testing {
-    top: 140px;
-    background-color: #645E9D; /* Red */
+  top: 140px;
+  background-color: #645E90;
 }
+
 
 #programs {
     top: 200px;
-    background-color: #2D0320; /* Light Black */
+    background-color: #2D0320;
 }
 
 #tracker {
     top: 260px;
-    background-color: #392B58; /* Light Black */
+    background-color: #392B58;
 }
 
 #timeline {
     top: 320px;
-    background-color: #645E9D; /* Light Black */
+    background-color: #645E9D;
 }
 
 #about {
     top: 380px;
-    background-color: #2D0320; /* Light Black */
+    background-color: #2D0320;
 }
 
 
