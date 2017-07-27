@@ -1,6 +1,7 @@
 h2 {
   font-family: 'Amatic SC', cursive;
   color: #2D0320;
+  font-size: 40px;
 }
 
 h1 {
@@ -9,9 +10,9 @@ h1 {
   font-size: 60px;
 }
 
-#revs {
-  font-size: 30px;
-}
+/*.revs {
+  font-size: 200px;
+}*/
 
 html {
   background-color: #2D0320;
@@ -67,6 +68,8 @@ body {
 
 .title {
     color: #645E9D;
+    font-family: 'Boogaloo', cursive;
+    font-size: 30px;
 }
 .header {
   display: inline-flex;
@@ -85,4 +88,31 @@ body {
 
 .button:hover {
     background-color: #555;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #6C969D;
+    font-family: 'Boogaloo', cursive;
+    font-size: 20px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
 }
