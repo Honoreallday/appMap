@@ -85,11 +85,12 @@
     color: #fff;
     animation: titleAnimation 36s linear infinite 0s;
 }
-.cb-slideshow li div h3 {
-    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+.cb-slideshow li div img {
+    font-family: 'Antic Slab' serif;
     font-size: 240px;
     padding: 0;
-    line-height: 200px;
+    
+    /*line-height: 200px*/
 }
 
 
