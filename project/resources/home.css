@@ -30,6 +30,7 @@
 #finaid {
     top: 80px;
     background-color: #392B58;
+}
 
 
 #testing {
@@ -89,7 +90,7 @@
     font-family: 'Antic Slab' serif;
     font-size: 240px;
     padding: 0;
-    
+
     /*line-height: 200px*/
 }
 
