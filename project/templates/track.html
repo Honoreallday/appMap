@@ -2,28 +2,38 @@
 <html>
   <head>
     <title>App Map</title>
+    <link href="/resources/track.css" rel="stylesheet"/>
   </head>
   <body>
     <h1>Your Map</h1>
     <h2> {{ name }} <h2>
     <h3> class of {{ class_year }} applicant </h3>
       <h2>Upcoming Deadlines</h2>
-
+      <ul>
+        {% for event in events %}
+        <li>{{ event.title }}<br>
+          {{ event.due_date}}<br>
+          {{ event.due_time }}<br>
+          {{ event.description }}<br>
+        </li>
+        {% endfor %}
+      </ul>      
         <h3>New Assignment</h3>
-        <form>
+        <form method="post" action='/track'>
           Assignment
           <input type="text" name="title">
           <br>
           Due Date
           <input type="text" name="due_date">
           <br>
+          Time
+          <input type="text" name="due_time">
+          <br>
           Description
           <input type="text" name="description">
           <br>
           <input type="submit" value="add">
         </form>
-      <h2>Timeline</h2>
-      
       <h2>Checklist</h2>
         <form>
         <input type="checkbox" name="profile" {% if profile %} checked {% endif %} >
@@ -62,6 +72,8 @@
         <input type="checkbox" name="program" {% if program %} checked {% endif %} >
         Program applications (college access programs, specialty programs)
         <br>
-        </form>
+      </form>
+      <h2>Timeline</h2>
+      <a href="personaltimeline.html">Timeline</a>
   </body>
 </html>
