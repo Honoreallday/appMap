@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
 
+
+
+
+html{
+  background-color: #2D0320;
+}
+
 ul{
   font-family: Amatic SC;
   font-size: 100%;
