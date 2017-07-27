@@ -156,22 +156,22 @@ class Track(webapp2.RequestHandler):
         applicant = Applicant(
         name= self.request.get('name'),
         class_year= self.request.get('class_year'),
-        profile= self.request.get('profile'),
-        activities= self.request.get('activities'),
-        essay= self.request.get('essay'),
-        supplements= self.request.get('supplements'),
-        recommendations= self.request.get('recommendations'),
-        interviews= self.request.get("interviews"),
-        fafsa= self.request.get('fafsa'),
-        css= self.request.get('css'),
-        idoc= self.request.get('idoc'),
-        scores= self.request.get('scores'),
-        scholarship= self.request.get('scholarship'),
-        program= self.request.get('program'),
+        profile= bool(self.request.get('profile')),
+        activities= bool(self.request.get('activities')),
+        essay= bool(self.request.get('essay')),
+        supplements= bool(self.request.get('supplements')),
+        recommendations= bool(self.request.get('recommendations')),
+        interviews= bool(self.request.get("interviews")),
+        fafsa= bool(self.request.get('fafsa')),
+        css= bool(self.request.get('css')),
+        idoc= bool(self.request.get('idoc')),
+        scores= bool(self.request.get('scores')),
+        scholarship= bool(self.request.get('scholarship')),
+        program= bool(self.request.get('program')),
         id=user.user_id()
         )
-        print applicant
         applicant.put()
+        self.get()
 
 class About(webapp2.RequestHandler):
     def get(self):
