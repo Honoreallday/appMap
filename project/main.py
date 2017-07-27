@@ -170,9 +170,8 @@ class Track(webapp2.RequestHandler):
         program= bool(self.request.get('program')),
         id=user.user_id()
         )
-        print applicant
         applicant.put()
-        self.redirect('/track')
+        self.get()
 
 class About(webapp2.RequestHandler):
     def get(self):
