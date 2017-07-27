@@ -97,12 +97,12 @@ class Login(webapp2.RequestHandler):
             else:
                 self.redirect('/registration')
         else:
-            template = env.get_template('login.html')
-            self.response.write(template.render())
-            # self.response.write('''
-            # Please log in to use our site! <br>
-            # <a href="%s">Sign in</a>''' % (
-            # users.create_login_url('/login')))
+            # template = env.get_template('login.html')
+            # self.response.write(template.render())
+            self.response.write('''
+            Please log in to use our site! <br>
+            <a href="%s">Sign in</a>''' % (
+            users.create_login_url('/login')))
 
 
 class Registration(webapp2.RequestHandler):
