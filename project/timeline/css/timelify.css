@@ -2,7 +2,17 @@
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
 
 
+#home {
+  width: 80px;
+  height: 25px;
+  margin:auto;
+  background-color: #2D0320;
+  text-align: center;
+}
 
+h3 {
+  color:#99D5C9;
+}
 
 html{
   background-color: #2D0320;
