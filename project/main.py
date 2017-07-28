@@ -43,7 +43,7 @@ class Event(ndb.Model):
     due_date = ndb.StringProperty()
     due_time = ndb.StringProperty()
     description = ndb.StringProperty()
-    key = ndb.KeyProperty(Applicant)
+    applicant_key = ndb.KeyProperty(Applicant)
 
 class Home(webapp2.RequestHandler):
     def get(self):
@@ -94,11 +94,11 @@ class Registration(webapp2.RequestHandler):
 class Track(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
-        query = Event.query()
+        applicant = Applicant.get_by_id(user.user_id())
+        query = Event.query(Event.applicant_key == applicant.key)
         query = query.order(Event.due_date)
         events = query.fetch()
         template = env.get_template('track.html')
-        applicant = Applicant.get_by_id(user.user_id())
         template_vars = {"name": applicant.name,
                          "class_year": applicant.class_year,
                          "profile": applicant.profile,
@@ -148,11 +148,13 @@ class Track(webapp2.RequestHandler):
 
 class EventHandler(webapp2.RequestHandler):
     def post(self):
+        user = users.get_current_user()
         event = Event (
         title = self.request.get('title'),
         due_date = self.request.get('due_date'),
         due_time = self.request.get('due_time'),
-        description = self.request.get('description')
+        description = self.request.get('description'),
+        applicant_key = Applicant.get_by_id(user.user_id()).key
         )
         event.put()
         time.sleep(1)
