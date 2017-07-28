@@ -1,11 +1,49 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
 
+
+
+#tabs h2 {
+  font-family: Amatic SC;
+  font-size: 250%;
+}
+
+#tabs ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2D0320;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+}
+
+#tabs li {
+    float: left;
+}
+
+
+#tabs li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#tabs #ducktape{
+  color: #2D0320
+}
+
+#tabs li a:hover {
+    background-color: #99D5C9;
+}
+
 html{
   background-color: #2D0320;
 }
 body{
-  background-color: white;
+  background-color: #99D5C9;
 }
 .title {
   text-align: center;
@@ -20,6 +58,8 @@ body{
 
 .intro-ish {
   text-align: center;
+  font-family: Rock Salt;
+  font-size: 90%;
 }
 
 #listy {
@@ -27,9 +67,19 @@ body{
 }
 
 #branch{
-  font-family: 'Rock Salt'
+  font-family: 'Rock Salt';
+  text-align: center;
 }
 
 #paint{
-  background-color: #99D5C9;
+  font-family: Amatic SC;
+  margin: auto;
+  width:80%;
+  background-color: white;
+  text-align: center;
+  border: 5px solid #2D0320;
+}
+
+p {
+  font-size: 130%;
 }
