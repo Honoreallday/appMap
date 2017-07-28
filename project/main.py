@@ -85,24 +85,29 @@ class Registration(webapp2.RequestHandler):
 
 class Track(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
         query = Event.query()
         query = query.order(Event.due_date)
         events = query.fetch()
+        home_link_html = '<a href="%s">Home</a>' % (
+            users.create_logout_url('/'))
+        self.response.write(home_link_html)
         template = env.get_template('track.html')
-        template_vars = {"name": self.request.get('name'),
-                         "class_year": self.request.get('class_year'),
-                         "profile": self.request.get('profile'),
-                         "activities": self.request.get('activities'),
-                         "essay": self.request.get('essay'),
-                         "supplements": self.request.get('supplements'),
-                         "recommendations": self.request.get('recommendations'),
-                         "interviews": self.request.get("interviews"),
-                         "fafsa": self.request.get('fafsa'),
-                         "css": self.request.get('css'),
-                         "idoc": self.request.get('idoc'),
-                         "scores": self.request.get('scores'),
-                         "scholarship": self.request.get('scholarship'),
-                         "program": self.request.get('program'),
+        applicant = Applicant.get_by_id(user.user_id())
+        template_vars = {"name": applicant.name,
+                         "class_year": applicant.class_year,
+                         "profile": applicant.profile,
+                         "activities": applicant.activities,
+                         "essay": applicant.essay,
+                         "supplements": applicant.supplements,
+                         "recommendations": applicant.recommendations,
+                         "interviews": applicant.interviews,
+                         "fafsa": applicant.fafsa,
+                         "css": applicant.css,
+                         "idoc": applicant.idoc,
+                         "scores": applicant.scores,
+                         "scholarship": applicant.scholarship,
+                         "program": applicant.program,
                          "events": events}
         self.response.write(template.render(template_vars))
         signout_link_html = '<a href="%s">Sign out</a>' % (
@@ -175,7 +180,7 @@ class Programs(webapp2.RequestHandler):
 
 class TimeLine(webapp2.RequestHandler):
     def get(self):
-        template = env.get_template('timeline.html')
+        template = env.get_template('/timeline/timeline.html')
         self.response.write(template.render())
 
 app = webapp2.WSGIApplication([

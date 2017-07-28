@@ -9,15 +9,14 @@
     <h2> {{ name }} <h2>
     <h3> class of {{ class_year }} applicant </h3>
       <h2>Upcoming Deadlines</h2>
-      <ul>
         {% for event in events %}
-        <li>{{ event.title }}<br>
+        <p>{{ event.title }}<br>
           {{ event.due_date}}<br>
           {{ event.due_time }}<br>
           {{ event.description }}<br>
-        </li>
+        <p>
         {% endfor %}
-      </ul>      
+      </ul>
         <h3>New Assignment</h3>
         <form method="post" action='/track'>
           Assignment
@@ -72,8 +71,7 @@
         <input type="checkbox" name="program" {% if program %} checked {% endif %} >
         Program applications (college access programs, specialty programs)
         <br>
+        <br>
       </form>
-      <h2>Timeline</h2>
-      <a href="personaltimeline.html">Timeline</a>
   </body>
 </html>
