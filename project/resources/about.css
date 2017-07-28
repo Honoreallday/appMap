@@ -1,3 +1,7 @@
+#qkfix{
+  color: #6C969D
+}
+
 h2 {
   font-family: 'Amatic SC', cursive;
   color: #2D0320;
@@ -28,7 +32,7 @@ body {
 /* Three columns side by side */
 .column {
     float: left;
-    width: 32%;
+    width: 31.5%;
     margin-bottom: 16px;
     padding: 0 8px;
 
@@ -73,6 +77,12 @@ body {
 }
 .header {
   display: inline-flex;
+  height:150px;
+  margin-top: 0px;
+}
+
+#logo{
+  text-align: center;
 }
 .button {
     border: none;

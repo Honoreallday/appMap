@@ -177,11 +177,11 @@ class Programs(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('programs.html')
         self.response.write(template.render())
-
-class TimeLine(webapp2.RequestHandler):
-    def get(self):
-        template = env.get_template('/timeline/timeline.html')
-        self.response.write(template.render())
+#
+# class TimeLine(webapp2.RequestHandler):
+#     def get(self):
+#         template = env.get_template('timeline.html')
+#         self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', Home),
@@ -190,7 +190,7 @@ app = webapp2.WSGIApplication([
     ('/finaid', FinancialAid),
     ('/testing', Testing),
     ('/programs', Programs),
-    ('/timeline', TimeLine),
+    #('/timeline', TimeLine),
     ('/track', Track),
     ('/about', About),
     ('/registration', Registration)
