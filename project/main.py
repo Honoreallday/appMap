@@ -16,6 +16,7 @@
 #
 import webapp2
 import jinja2
+import time
 from google.appengine.api import users
 from google.appengine.ext import ndb
 
@@ -36,6 +37,13 @@ class Applicant(ndb.Model):
     scores = ndb.BooleanProperty()
     scholarship = ndb.BooleanProperty()
     program = ndb.BooleanProperty()
+
+class Event(ndb.Model):
+    title = ndb.StringProperty()
+    due_date = ndb.StringProperty()
+    due_time = ndb.StringProperty()
+    description = ndb.StringProperty()
+    key = ndb.KeyProperty(Applicant)
 
 class Home(webapp2.RequestHandler):
     def get(self):
@@ -89,9 +97,6 @@ class Track(webapp2.RequestHandler):
         query = Event.query()
         query = query.order(Event.due_date)
         events = query.fetch()
-        home_link_html = '<a href="%s">Home</a>' % (
-            users.create_logout_url('/'))
-        self.response.write(home_link_html)
         template = env.get_template('track.html')
         applicant = Applicant.get_by_id(user.user_id())
         template_vars = {"name": applicant.name,
@@ -138,6 +143,11 @@ class Track(webapp2.RequestHandler):
         id=user.user_id()
         )
         applicant.put()
+        time.sleep(1)
+        self.get()
+
+class EventHandler(webapp2.RequestHandler):
+    def post(self):
         event = Event (
         title = self.request.get('title'),
         due_date = self.request.get('due_date'),
@@ -145,13 +155,8 @@ class Track(webapp2.RequestHandler):
         description = self.request.get('description')
         )
         event.put()
-        self.get()
-
-class Event(ndb.Model):
-    title = ndb.StringProperty()
-    due_date = ndb.StringProperty()
-    due_time = ndb.StringProperty()
-    description = ndb.StringProperty()
+        time.sleep(1)
+        self.redirect('/track')
 
 class About(webapp2.RequestHandler):
     def get(self):
@@ -192,6 +197,7 @@ app = webapp2.WSGIApplication([
     ('/programs', Programs),
     #('/timeline', TimeLine),
     ('/track', Track),
+    ('/event', EventHandler),
     ('/about', About),
     ('/registration', Registration)
 ], debug=True)

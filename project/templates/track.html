@@ -3,11 +3,23 @@
   <head>
     <title>App Map</title>
     <link href="/resources/track.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Cardo|Cinzel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Boogaloo');
+    </style>
   </head>
   <body>
-    <h1>Your Map</h1>
-    <h2> {{ name }} <h2>
+    <div class="header">
+    <a href="/"><img src="../resources/pics/loginlogo.png"/></a><h1>Your Map</h1>
+    </div>
+    <h2 id="name"> {{ name }} <h2>
     <h3> class of {{ class_year }} applicant </h3>
+    <br>
       <h2>Upcoming Deadlines</h2>
         {% for event in events %}
         <p>{{ event.title }}<br>
@@ -18,7 +30,7 @@
         {% endfor %}
       </ul>
         <h3>New Assignment</h3>
-        <form method="post" action='/track'>
+        <form method="post" action='/event'>
           Assignment
           <input type="text" name="title">
           <br>
@@ -73,5 +85,14 @@
         <br>
         <br>
       </form>
+      <div id="mySidenav" class="sidenav">
+        <a href="/application" id="application">Application</a>
+        <a href="/finaid" id="finaid">Financial Aid</a>
+        <a href="/testing" id="testing">Testing</a>
+        <a href="/programs" id="programs">Programs</a>
+        <a href="/track" id="tracker">My Tracker</a>
+        <a href="/timeline/timeline.html" id="timeline">Timeline</a>
+        <a href="/about" id="about">About</a>
+      </div>
   </body>
 </html>

@@ -1,3 +1,25 @@
+body {
+  background-color: #A3B9C9;
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 30px;
+}
+
+#name {
+  font-size: 36px;
+}
+
+h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+}
+
+form {
+  font-family: 'Cardo', serif;
+  font-size: 16px;
+}
 .navbar {
   font-family: 'Amatic SC', cursive;
   color: #2D0320;
@@ -8,6 +30,7 @@ h1 {
   font-family: 'Rock Salt', cursive;
   color: #392B58;
   font-size: 60px;
+  margin-left: 0px;
 }
 
 .sechead {
@@ -72,4 +95,62 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #111;
+}
+
+img {
+  height: 75%;
+}
+
+#mySidenav a {
+    position: absolute;
+    right: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    font-family: Boogaloo;
+}
+
+#mySidenav a:hover {
+    right: 0;
+}
+
+#application {
+    top: 280px;
+    background-color: #2D0320;
+}
+
+#finaid {
+    top: 340px;
+    background-color: #392B58;
+}
+
+
+#testing {
+  top: 400px;
+  background-color: #645E90;
+}
+
+
+#programs {
+    top: 460px;
+    background-color: #2D0320;
+}
+
+#tracker {
+    top: 520px;
+    background-color: #392B58;
+}
+
+#timeline {
+    top: 580px;
+    background-color: #645E9D;
+}
+
+#about {
+    top: 640px;
+    background-color: #2D0320;
 }

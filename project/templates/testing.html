@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Testing</title>
+  <title>App Map</title>
   <link href="/resources/testing.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
   <style>
   @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
   </style>
@@ -10,22 +11,21 @@
   <style>
   @import url('https://fonts.googleapis.com/css?family=Boogaloo');
   </style>
-
 </head>
 <body>
   <div class="header">
-    <img src="../resources/pics/loginlogo.png"/><h1>Testing</h1>
+    <a href="/"><img src="../resources/pics/loginlogo.png"/></a><h1>Testing</h1>
   </div>
   <div class="navbar">
-    <ol>
+    <ol id="a">
       <div class="next">
-        <li><a href="/application">Application</a></li>
-        <li><a href="/finaid">Financial Aid</a></li>
-        <li><a href="/testing">Testing</a></li>
-        <li><a href="/programs">College Access Programs</a></li>
-        <li><a href="/track">My Tracker</a></li>
-        <li><a href="/timeline">Timeline</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a id="navbar" href="/application">Application</a></li>
+        <li><a id="navbar" href="/finaid">Financial Aid</a></li>
+        <li><a id="navbar" href="/testing">Testing</a></li>
+        <li><a id="navbar" href="/programs">College Access Programs</a></li>
+        <li><a id="navbar" href="/track">My Tracker</a></li>
+        <li><a id="navbar" href="../timeline/timeline.html">Timeline</a></li>
+        <li><a id="navbar" href="/about">About</a></li>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
         SAT subject test scores. It is highly recommended that
         you take your first test during the fall of your junior year.
         Between the SAT and ACT, it is best to try each test to see which one is best for you.
-        Here is a brief overview of each test.
+        Here is a brief overview of each test.</p>
 
   <div class="together">
     <div class="sechead">
@@ -60,15 +60,14 @@
       <li>Scores: 1-36 (essay: domain scores 2-12 each)
     </ul>
   </div>
-
-
   <div class="together">
   <div class="sechead">
     <h3>SAT Subject Tests</h3>
   </div>
     <div class="put">
       <p>You may have heard something about SAT IIs or SAT subject tests. Currently,
-        the CollegeBoard offers 20 subject tests:<ul>
+        the CollegeBoard offers 20 subject tests:
+        <ul>
           <li>Math Level 1</li>
           <li>Math Level 2</li>
           <li>Biology E/M(Ecological/Molecular)</li>
@@ -79,6 +78,8 @@
           <li>World History</li>
           <li>Spanish</li>
           <li>Spanish with Listening</li>
+        </ul>
+        <ul>
           <li>French</li>
           <li>French with Listening</li>
           <li>Chinese with Listening</li>
@@ -94,21 +95,22 @@
       <p>&nbsp;Often, a college will require 2-3 subject tests. Some schools require
         specific ones; others let you choose which ones to take. People
         tend to take the test in the subject they just learned in school (i.e. taking
-        the Biology subject test after taking AP Bio).
+        the Biology subject test after taking AP Bio).</p>
         <br>
         <br>
-        &nbsp; Whatever you choose to take,practice as much as you can.
-        CollegeBoard and ACT conveniently provides descriptions
-        and practice questions. Plus, there are tons of
-        resources like Barron's and Princeton Review that will give you not only
-        content review but also practice questions and tests.
       </div>
     </div>
-  <div class="together">
-  <div class="sechead">
-  <h2>Sending Your Scores</h2>
-</div>
+    <p>&nbsp; Whatever you choose to take, practice as much as you can.
+      CollegeBoard and ACT conveniently provides descriptions
+      and practice questions. Plus, there are tons of
+      resources like Barron's and Princeton Review that will give you not only
+      content review but also practice questions and tests.</p>
 
+  <div class="revs">
+  <h2>Sending Your Scores</h2>
+  </div>
+
+      <div>
       <p>&nbsp;<i>Some</i> colleges will require you to send your test scores. More
         and more schools are becoming test-optional, and some schools will allow
         score-choice, which means you can send whichever scores you want.
@@ -117,11 +119,15 @@
         For schools that require score reports, here's a step by step
         process of how to send your scores:</p>
       </div>
+    <div class="sechead2">
     <h3>CollegeBoard</h3>
+    </div>
+    <br>
       <ol>
         <li>Go to <a href="https://www.collegeboard.org/">https://www.collegeboard.org/ and sign in.</a></li>
         <br>
         <img class="testing" src="/images/collegeboardstepone.png"/>
+        <br>
         <br>
         <br>
         <li>Click on "My SAT".</li>
@@ -129,9 +135,11 @@
         <img class="testing" src="/images/collegeboardsteptwo.png"/>
         <br>
         <br>
+        <br>
         <li>Click on "Send Available Scores Now" and then click "Send Additional Score Reports".</li>
         <br>
         <img class="testing" src="/images/collegeboardstepthree.png"/>
+        <br>
         <br>
         <br>
         <li>Search your school's name, click on it, and then click add to add each school one by one.
@@ -140,21 +148,26 @@
         <img class="testing" src="/images/collegeboardstepfour.png" />
         <br>
         <br>
+        <br>
         <li>If your school offers score-choice, then you have the option to select the test scores you want to
         send. You can change which scores will be sent by clicking on "Choose Scores".</li>
         <br>
         <img class="testing" src="/images/collegeboardstepfive.png"/>
         <br>
         <br>
+        <br>
         <li>Once, you're satisfied with your score report, then you can click continue to go to the
           payment section where you will put in your credit card information. From there, when you
           hit submit, you should be redirected to a confirmation page with your order information.  </li>
       </ol>
+    <div class="sechead2">
     <h3>ACT</h3>
+    </div>
       <ol>
         <li>Go to <a href="http://www.act.org/">http://www.act.org/.</a></li>
         <br>
         <img class="testing" src="/images/actstepone.png"/>
+        <br>
         <br>
         <br>
         <li>Sign in to "ACT Test."</li>
@@ -162,9 +175,11 @@
         <img class="testing" src="/images/actsteptwo.png"/>
         <br>
         <br>
+        <br>
         <li>Sign into your account.</li>
         <br>
         <img class="testing" src="/images/actstepthree.png"/>
+        <br>
         <br>
         <br>
         <li>Click on "Send Your Scores."</li>
@@ -172,14 +187,17 @@
         <img class="testing" src="/images/actstepfour.png"/>
         <br>
         <br>
+        <br>
         <li>Click on the test score(s) you want to submit, and click continue</li>
         <br>
         <img class="testing" src="/images/actstepfive.png"/>
         <br>
         <br>
+        <br>
         <li>Enter in the information of the school(s) you are sending the scores to.</li>
         <br>
         <img class="testing" src="/images/actstepsix.png"/>
+        <br>
         <br>
         <br>
         <li>Once you're done adding your schools, click "continue."</li>
@@ -189,7 +207,7 @@
         <br>
         <li>You should be taken to the payment section where you will put in your credit card information.
           Once you do that and hit "submit," you should be taken to a confirmation page with your order information.</li>
-    <p>&nbsp; TAKE CAUTION: when sending scores, make sure you send them well in
+          <p>&nbsp; TAKE CAUTION: when sending scores, make sure you send them well in
       advance. It often takes about 1-3 weeks for them to be sent by CollegeBoard/ACT
       and processed by the school(s) you're sending them to. If you are taking any
       of these tests, the latest testing date suggested for early admission is October

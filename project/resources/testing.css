@@ -1,94 +1,3 @@
-/*.navbar {
-  font-family: 'Amatic SC', cursive;
-  color: #2D0320;
-  font-size: 40px;
-}
-
-h1 {
-  font-family: 'Rock Salt', cursive;
-  color: #392B58;
-  font-size: 60px;
-}
-
-.sechead {
-  color: #645E9D;
-  font-family: 'Boogaloo', cursive;
-  font-size: 30px;
-  float: right;
-  width: 300px;
-  border: 3px solid white;
-  padding: 10px;
-}
-
-.header {
-  display: inline-flex;
-}
-
-.revs {
-  font-family: 'Amatic SC', cursive;
-  color: #2D0320;
-  font-size: 40px;
-}
-
-2 {
-  font-family: 'Amatic SC', cursive;
-  color: #2D0320;
-  font-size: 40px;
-}
-
-h1 {
-  font-family: 'Rock Salt', cursive;
-  color: #392B58;
-  font-size: 60px;
-}
-
-/*.revs {
-  font-size: 200px;
-}
-
-html {
-  background-color: #2D0320;
-}
-
-body {
-  background-color: white;
-}
-
-
-.title {
-    color: #645E9D;
-    font-family: 'Boogaloo', cursive;
-    font-size: 30px;
-}
-
-
-ol {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #6C969D;
-    font-family: 'Boogaloo', cursive;
-    font-size: 20px;
-    float: left;
-}
-
-.next {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}*/
-
 .navbar {
   font-family: 'Amatic SC', cursive;
   color: #2D0320;
@@ -111,6 +20,14 @@ h1 {
   padding: 10px;
 }
 
+.sechead2 {
+  color: #645E9D;
+  font-family: 'Boogaloo', cursive;
+  font-size: 30px;
+  width: 300px;
+  border: 1px solid white;
+}
+
 .header {
   display: inline-flex;
 }
@@ -121,13 +38,13 @@ h1 {
   font-size: 40px;
 }
 
-ol {
+ol#a {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #6C969D;
-    font-family: 'Boogaloo', cursive;
+    font-family: 'Boogalo', cursive;
     font-size: 20px;
 }
 
@@ -138,7 +55,7 @@ ol {
 }
 
 .put {
-  display: block;
+  display: inline-flex;
   line-height: 1.5;
   text-align: left;
 }
@@ -158,7 +75,7 @@ table {
 }
 
 
-li a {
+a#navbar {
     display: block;
     color: white;
     text-align: center;
@@ -168,6 +85,15 @@ li a {
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+a#navbar:hover {
     background-color: #111;
+}
+
+li, p {
+  font-family: 'Playfair Display', serif;
+}
+
+.testing {
+  width: 75%;
+  border: 1px solid gray;
 }

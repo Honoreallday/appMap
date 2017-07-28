@@ -1,0 +1,32 @@
+body {
+  background-color: #6D98BA;
+}
+
+h1 {
+  font-family: 'Amiri', serif;
+  font-size: 44px;
+  text-align: center;
+  color: white;
+}
+
+div#a {
+  font-family:'Cardo', serif;
+  font-size: 24px;
+  margin-left: 300px;
+  color: white;
+}
+
+div#b {
+  text-align: center;
+}
+
+#submit {
+  background:    #6c809a;
+  border-radius: 4px;
+  padding:       8px 18px;
+  color:         #ffffff;
+  display:       inline-block;
+  font:          normal 400 24px/1 'Cardo', serif;
+  text-align:    center;
+  text-shadow:   none;
+}
